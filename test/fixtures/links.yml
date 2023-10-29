@@ -1,0 +1,9 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  url: https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+  slug: fixture-set
+
+two:
+  url: https://google.com
+  slug: google

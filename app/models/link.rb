@@ -6,6 +6,12 @@ class Link < ApplicationRecord
   validates :url, presence: true
   validates :url, format: { with: URL_REGEXP }
 
+  def short_url
+    return unless slug
+
+    Rails.application.routes.url_helpers.short_url(slug)
+  end
+
   private
 
   def generate_slug

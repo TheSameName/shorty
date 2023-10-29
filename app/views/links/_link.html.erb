@@ -1,7 +1,10 @@
 <div id="<%= dom_id link %>">
   <p>
-    <strong>Url:</strong>
+    <strong>Shorten url:</strong>
+    <%= link_to link.short_url, link.short_url %>
+  </p>
+  <p>
+    <strong>Full url:</strong>
     <%= link.url %>
   </p>
-
 </div>

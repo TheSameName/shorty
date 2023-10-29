@@ -2,6 +2,8 @@
 
 one:
   url: https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+  slug: fixture-set
 
 two:
   url: https://google.com
+  slug: google

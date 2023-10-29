@@ -1,0 +1,29 @@
+<% content_for :head do %>
+  <!-- Primary Meta Tags -->
+  <title> Shorty </title>
+  <meta name="title" content="Shorty~" />
+  <meta name="description" content="Your custom url shortener!" />
+
+  <!-- Google / Search Engine Tags -->
+  <meta itemprop="name" content="Shorty~">
+  <meta itemprop="description" content="Your custom url shortener!">
+  <meta itemprop="image" content="<%= image_path("white.png") %>">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="<%= @link.url %>" />
+  <meta property="og:title" content="Shorty~" />
+  <meta property="og:description" content="Your custom url shortener!" />
+  <meta property="og:image" content="<%= image_path("white.png") %>" />
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="<%= @link.url %>" />
+  <meta property="twitter:title" content="Shorty~" />
+  <meta property="twitter:description" content="Your custom url shortener!" />
+  <meta property="twitter:image" content="<%= image_path("white.png") %>" />
+
+  <!-- Other -->
+  <meta name="robots" content="noindex, nofollow">
+  <meta http-equiv="refresh" content="1; url=<%= @link.url%>"/>
+<% end %>

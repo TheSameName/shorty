@@ -1,9 +1,9 @@
 class RedirectsController < ApplicationController
+  layout "custom-tags"
+
   before_action :find_link
 
-  def show
-    redirect_to @link.url, allow_other_host: true
-  end
+  def show; end
 
   private
 

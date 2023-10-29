@@ -16,7 +16,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_10_29_154303) do
 
   create_table "links", force: :cascade do |t|
     t.string "url", null: false
-    t.string "slug", null: false
+    t.string "slug"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["slug"], name: "index_links_on_slug", unique: true

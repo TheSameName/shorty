@@ -6,12 +6,11 @@ volumes:
   pg_data:
 
 networks:
-  efficio:
+  shorty:
 
 services:
   db:
     image: postgres:15-alpine
-    container_name: postgres
     volumes:
       - pg_data:/var/lib/postgresql/data
     environment:
@@ -19,7 +18,7 @@ services:
     ports:
       - "5432:5432"
     networks:
-      - efficio
+      - shorty
 
   # redis:
   #   image: redis:7-alpine
@@ -27,7 +26,7 @@ services:
   #   ports:
   #     - "6379:6379"
   #   networks:
-  #     - efficio
+  #     - shorty
 
   # app:
   #   build:
@@ -49,4 +48,4 @@ services:
   #     - db
   #     - redis
   #   networks:
-  #     - efficio
+  #     - shorty

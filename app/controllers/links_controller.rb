@@ -1,9 +1,9 @@
 class LinksController < ApplicationController
-  before_action :set_link, only: %i[show edit update destroy]
+  before_action :find_link!, only: %i[show edit update destroy]
 
   # GET /links
   def index
-    @links = Link.all
+    @links = Link.order(created_at: :desc)
   end
 
   # GET /links/1
@@ -12,6 +12,7 @@ class LinksController < ApplicationController
   # GET /links/new
   def new
     @link = Link.new
+    @link.link_configurations.build
   end
 
   # GET /links/1/edit
@@ -45,13 +46,15 @@ class LinksController < ApplicationController
 
   private
 
-    # Use callbacks to share common setup or constraints between actions.
-  def set_link
+  def find_link!
     @link = Link.find(params[:id])
   end
 
-    # Only allow a list of trusted parameters through.
   def link_params
-    params.require(:link).permit(:url)
+    params.require(:link)
+      .permit(
+        :url,
+        link_configurations_attributes: %i[title description image]
+      )
   end
 end

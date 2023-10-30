@@ -12,8 +12,27 @@
   <% end %>
 
   <div>
-    <%= form.label :url, style: "display: block" %>
+    <%= form.label :url, style: "margin-right: 20px" %>
     <%= form.text_field :url %>
+  </div>
+
+  <div style="margin: 10px 0 30px">
+    <%= form.fields_for :link_configurations do |lc_form| %>
+      <div style="display:flex;">
+        <%= lc_form.label :title, style: "margin-right: 20px" %>
+        <%= lc_form.text_field :title %>
+      </div>
+
+      <div style="display:flex;">
+        <%= lc_form.label :description, style: "margin-right: 20px" %>
+        <%= lc_form.text_field :description %>
+      </div>
+
+      <div style="display:flex;">
+        <%= lc_form.label :image, style: "margin-right: 20px" %>
+        <%= lc_form.select :image, ["/backgrounds/default-red.png", "/backgrounds/default-white.png"] %>
+      </div>
+    <% end %>
   </div>
 
   <div>

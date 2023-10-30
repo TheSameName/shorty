@@ -1,6 +1,4 @@
 class RedirectsController < ApplicationController
-  layout "custom-tags"
-
   before_action :find_link
 
   def show; end

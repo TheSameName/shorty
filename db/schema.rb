@@ -10,9 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2023_10_29_154303) do
+ActiveRecord::Schema[7.1].define(version: 2023_10_30_224420) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "link_configurations", force: :cascade do |t|
+    t.bigint "link_id", null: false
+    t.string "title"
+    t.string "description"
+    t.string "image"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["link_id"], name: "index_link_configurations_on_link_id"
+  end
 
   create_table "links", force: :cascade do |t|
     t.string "url", null: false
@@ -22,4 +32,5 @@ ActiveRecord::Schema[7.1].define(version: 2023_10_29_154303) do
     t.index ["slug"], name: "index_links_on_slug", unique: true
   end
 
+  add_foreign_key "link_configurations", "links"
 end

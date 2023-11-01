@@ -1,8 +1,14 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Shorty</title>
+    <% if content_for? :head %>
+      <%= yield :head %>
+    <% else %>
+      <%= render partial: 'shared/metatags' %>
+    <% end %>
+
     <meta name="viewport" content="width=device-width,initial-scale=1">
+
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 

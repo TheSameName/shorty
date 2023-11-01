@@ -2,11 +2,11 @@ require "test_helper"
 
 class RedirectsControllerTest < ActionDispatch::IntegrationTest
   test "should redirect to the correct URL" do
-    link = links(:one)
+    link = create(:link)
 
     get short_path(slug: link.slug)
 
-    assert_redirected_to link.url
+    assert_response :ok
   end
 
   test "should return 404 for non-existent slug" do

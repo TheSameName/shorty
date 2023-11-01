@@ -5,7 +5,7 @@ class Link < ApplicationRecord
 
   has_many :link_configurations, dependent: :destroy
 
-  accepts_nested_attributes_for :link_configurations, reject_if: :all_blank
+  accepts_nested_attributes_for :link_configurations, reject_if: :all_blank, allow_destroy: true
 
   validates :url, presence: true
   validates :url, format: { with: URL_REGEXP }

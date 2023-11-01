@@ -32,3 +32,9 @@ group :development do
   gem "rubocop-rails", require: false
   gem "rubocop-performance", require: false
 end
+
+group :test do
+  gem "shoulda", "~> 4.0"
+  gem "factory_bot_rails", "~> 6.2"
+  gem "faker", "~> 3.2"
+end

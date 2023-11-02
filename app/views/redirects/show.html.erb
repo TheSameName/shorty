@@ -3,8 +3,8 @@
   <meta http-equiv="refresh" content="1; url=<%= @link.url %>"/>
 
   <% if @link.link_configurations.any? %>
-    <!-- Primary Meta Tags -->
       <% @link.link_configurations.last.tap do |config| %>
+          <!-- Primary Meta Tags -->
           <title> <%= config.title %> </title>
           <meta name="title" content="<%= config.title %>" />
           <meta name="description" content="<%= config.description %>" />
@@ -12,21 +12,21 @@
           <!-- Google / Search Engine Tags -->
           <meta itemprop="name" content="<%= config.title %>">
           <meta itemprop="description" content="<%= config.description %>">
-          <meta itemprop="image" content="<%= image_path(config.image) %>">
+          <meta itemprop="image" content="<%= image_path(url_for(config.image)) %>">
 
           <!-- Open Graph / Facebook -->
           <meta property="og:type" content="website" />
           <meta property="og:url" content="<%= @link.url %>" />
           <meta property="og:title" content="<%= config.title %>" />
           <meta property="og:description" content="<%= config.description %>" />
-          <meta property="og:image" content="<%= image_path(config.image) %>" />
+          <meta property="og:image" content="<%= image_path(url_for(config.image)) %>" />
 
           <!-- Twitter -->
           <meta property="twitter:card" content="summary_large_image" />
           <meta property="twitter:url" content="<%= @link.url %>" />
           <meta property="twitter:title" content="<%= config.title %>" />
           <meta property="twitter:description" content="<%= config.description %>" />
-          <meta property="twitter:image" content="<%= image_path(config.image) %>" />
+          <meta property="twitter:image" content="<%= image_path(url_for(config.image)) %>" />
       <% end %>
     <% else %>
       <%= render partial: 'shared/metatags' %>

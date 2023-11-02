@@ -24,3 +24,6 @@
 /config/master.key
 .notes/
 .idea/
+
+/app/assets/builds/*
+!/app/assets/builds/.keep

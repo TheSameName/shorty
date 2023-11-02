@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html class="h-full">
   <head>
     <% if content_for? :head %>
       <%= yield :head %>
@@ -17,10 +17,10 @@
     <%= stylesheet_link_tag "application" %>
   </head>
 
-  <body>
+  <body class="h-full">
     <%= render partial: "shared/navbar" %>
 
-    <main class="container mx-auto mt-28 px-5 flex">
+    <main class="container mx-auto mt-28">
       <%= yield %>
     </main>
   </body>

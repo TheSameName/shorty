@@ -6,7 +6,7 @@ volumes:
   pg_data:
 
 networks:
-  shorty:
+  smash:
 
 services:
   db:
@@ -18,7 +18,7 @@ services:
     ports:
       - "5432:5432"
     networks:
-      - shorty
+      - smash
 
   # redis:
   #   image: redis:7-alpine
@@ -26,7 +26,7 @@ services:
   #   ports:
   #     - "6379:6379"
   #   networks:
-  #     - shorty
+  #     - smash
 
   # app:
   #   build:
@@ -48,4 +48,4 @@ services:
   #     - db
   #     - redis
   #   networks:
-  #     - shorty
+  #     - smash

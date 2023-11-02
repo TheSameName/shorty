@@ -8,11 +8,11 @@ default: &default
 
 development:
   <<: *default
-  database: shorty_development
+  database: smash_development
 
 test:
   <<: *default
-  database: shorty_test
+  database: smash_test
 
 production:
   <<: *default

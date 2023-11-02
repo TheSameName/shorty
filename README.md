@@ -1,3 +1,3 @@
-# Shorty
+# Smash
 
-> Yet another URL shortener~
+> Your url smasher

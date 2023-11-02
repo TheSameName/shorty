@@ -20,6 +20,9 @@ gem "dotenv-rails", require: "dotenv/rails-now"
 # Tailwind-it!
 gem "tailwindcss-rails", "~> 2.0"
 
+# Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
+gem "image_processing", "~> 1.12"
+
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem "tzinfo-data", platforms: %i[windows jruby]
 

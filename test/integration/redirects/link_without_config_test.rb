@@ -11,7 +11,7 @@ class LinkWithoutConfigurationTest < ActionDispatch::IntegrationTest
     get short_path(slug: link.slug)
 
     assert_response :success
-    assert_select "title", "Smash"
+    assert_select "title", "Smash!"
     assert_select "meta[name='title'][content='Smash!']", 1
     assert_select "meta[name='description'][content='Your custom url shortener!']", 1
 

@@ -4,19 +4,22 @@
     <% if content_for? :head %>
       <%= yield :head %>
     <% else %>
-      <%= render partial: 'shared/metatags' %>
+      <%= render partial: "shared/metatags" %>
     <% end %>
 
     <meta name="viewport" content="width=device-width,initial-scale=1">
 
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+
     <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
 
     <%= stylesheet_link_tag "application" %>
   </head>
 
   <body>
+    <%= render partial: "shared/navbar" %>
+
     <main class="container mx-auto mt-28 px-5 flex">
       <%= yield %>
     </main>

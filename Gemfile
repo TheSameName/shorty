@@ -17,6 +17,9 @@ gem "puma", ">= 5.0"
 # Manage secrets
 gem "dotenv-rails", require: "dotenv/rails-now"
 
+# Tailwind-it!
+gem "tailwindcss-rails", "~> 2.0"
+
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem "tzinfo-data", platforms: %i[windows jruby]
 

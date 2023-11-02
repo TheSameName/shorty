@@ -1,9 +1,9 @@
-<div id="<%= dom_id link %>">
-  <p>
+<div id="<%= dom_id link %>" class="bg-gray-100 rounded-lg p-4 mb-4">
+  <p class="text-gray-700 font-bold">
     <strong>Shorten url:</strong>
-    <%= link_to link.short_url, link.short_url %>
+    <%= link_to link.short_url, link.short_url, class: "text-blue-500 hover:underline" %>
   </p>
-  <p>
+  <p class="text-gray-700">
     <strong>Full url:</strong>
     <%= link.url %>
   </p>

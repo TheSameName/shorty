@@ -36,6 +36,9 @@ Rails.application.configure do
   # Store uploaded files on the local file system (see config/storage.yml for options).
   config.active_storage.service = :local
 
+  # Disable active storage direct upload routes
+  config.active_storage.draw_routes = false
+
   config.hosts << ENV.fetch("HOST", "localhost")
 
   # Print deprecation notices to the Rails logger.

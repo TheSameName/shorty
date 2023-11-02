@@ -32,7 +32,7 @@ Rails.application.configure do
   config.active_storage.service = :test
 
   # Disable active storage direct upload routes
-  config.active_storage.draw_routes = false
+  # config.active_storage.draw_routes = false
 
   # Raise exceptions instead of rendering exception templates.
   config.action_dispatch.show_exceptions = :rescuable

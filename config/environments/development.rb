@@ -37,7 +37,7 @@ Rails.application.configure do
   config.active_storage.service = :local
 
   # Disable active storage direct upload routes
-  config.active_storage.draw_routes = false
+  # config.active_storage.draw_routes = false
 
   config.hosts << ENV.fetch("HOST", "localhost")
 

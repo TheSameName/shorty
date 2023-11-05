@@ -27,7 +27,8 @@ RSpec.describe Link do
     it "generates a slug after create" do
       link = build(:link, slug: nil)
       link.save
-      expect(link.slug).not_to be_nil
+
+      expect(link.slug).to eq(Base62.encode(link.id))
     end
   end
 end

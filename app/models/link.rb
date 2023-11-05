@@ -5,6 +5,10 @@ class Link < ApplicationRecord
 
   has_many :link_configurations, dependent: :destroy
 
+  has_many :clicks, as: :owner, # TODO: add counter_cache
+    class_name: "Events::Click",
+    dependent: :destroy
+
   accepts_nested_attributes_for :link_configurations, reject_if: :all_blank, allow_destroy: true
 
   validates :url, presence: true

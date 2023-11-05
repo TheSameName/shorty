@@ -1,6 +1,8 @@
 <% content_for :head do %>
-  <meta name="robots" content="noindex, nofollow">
+  <%# <meta name="robots" content="noindex, nofollow"> %>
+  <%# TODO: Meta tag or JS? %>
   <meta http-equiv="refresh" content="1; url=<%= @link.url %>"/>
+  <%# document.addEventListener("DOMContentLoaded", () => { window.location.href = "@link.url"; }); %>
 
   <% if @link.link_configurations.any? %>
       <% @link.link_configurations.last.tap do |config| %>

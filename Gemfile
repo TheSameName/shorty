@@ -42,6 +42,12 @@ group :development, :test do
   gem "rubocop-rspec", require: false
 end
 
+group :test do
+  # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
+  gem "capybara", "~> 3.3"
+  gem "selenium-webdriver", "~> 4.14"
+end
+
 group :development do
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"

@@ -4,6 +4,10 @@ FactoryBot.define do
 
     title { Faker::Lorem.sentence }
     description { Faker::Lorem.paragraph }
-    image { fixture_file_upload("image.jpg", "image/jpeg") }
+    image do
+      Rack::Test::UploadedFile.new(
+        Rails.root.join("spec/fixtures/files/image.jpg"), "image/jpeg"
+      )
+    end
   end
 end

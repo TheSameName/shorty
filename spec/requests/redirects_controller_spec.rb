@@ -1,4 +1,4 @@
-RSpec.describe "Redirects", type: :request do
+RSpec.describe "Redirects" do
   describe "GET #show" do
     let(:link) { create(:link) }
 

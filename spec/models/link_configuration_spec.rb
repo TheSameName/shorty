@@ -1,13 +1,13 @@
-RSpec.describe LinkConfiguration, type: :model do
+RSpec.describe LinkConfiguration do
   describe "associations" do
-    it { should belong_to(:link) }
-    it { should have_one_attached(:image) }
+    it { is_expected.to belong_to(:link) }
+    it { is_expected.to have_one_attached(:image) }
   end
 
   describe "validations" do
-    it { should validate_presence_of(:title) }
-    it { should validate_presence_of(:description) }
-    it { should validate_presence_of(:image) }
+    it { is_expected.to validate_presence_of(:title) }
+    it { is_expected.to validate_presence_of(:description) }
+    it { is_expected.to validate_presence_of(:image) }
 
     describe "#validate_image_type" do
       context "when image content type is not JPEG, PNG or WEBP" do

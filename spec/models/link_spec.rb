@@ -1,18 +1,18 @@
 require "rails_helper"
 
-RSpec.describe Link, type: :model do
+RSpec.describe Link do
   describe "relations" do
-    it { should have_many(:link_configurations).dependent(:destroy) }
-    it { should accept_nested_attributes_for(:link_configurations).allow_destroy(true) }
+    it { is_expected.to have_many(:link_configurations).dependent(:destroy) }
+    it { is_expected.to accept_nested_attributes_for(:link_configurations).allow_destroy(true) }
   end
 
   describe "validations" do
-    it { should validate_presence_of(:url) }
+    it { is_expected.to validate_presence_of(:url) }
 
     context "url format" do
-      it { should allow_value("http://example.com").for(:url) }
-      it { should allow_value("https://example.com").for(:url) }
-      it { should_not allow_value("invalid_url").for(:url) }
+      it { is_expected.to allow_value("http://example.com").for(:url) }
+      it { is_expected.to allow_value("https://example.com").for(:url) }
+      it { is_expected.not_to allow_value("invalid_url").for(:url) }
     end
   end
 

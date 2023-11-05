@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/rails/rails.git
-  revision: 8be97569325f99c4456b257a180a05c891665d7e
+  revision: ee03f03f1b58adb8b424ac69e4660821d50a0f33
   branch: 7-1-stable
   specs:
     actioncable (7.1.1)
@@ -103,10 +103,21 @@ GIT
 GEM
   remote: https://rubygems.org/
   specs:
+    addressable (2.8.5)
+      public_suffix (>= 2.0.2, < 6.0)
     ast (2.4.2)
     base64 (0.1.1)
     bigdecimal (3.1.4)
     builder (3.2.4)
+    capybara (3.39.2)
+      addressable
+      matrix
+      mini_mime (>= 0.1.3)
+      nokogiri (~> 1.8)
+      rack (>= 1.6.0)
+      rack-test (>= 0.6.3)
+      regexp_parser (>= 1.5, < 3.0)
+      xpath (~> 3.2)
     concurrent-ruby (1.2.2)
     connection_pool (2.4.1)
     crass (1.0.6)
@@ -114,6 +125,7 @@ GEM
     debug (1.8.0)
       irb (>= 1.5.0)
       reline (>= 0.3.1)
+    diff-lcs (1.5.0)
     dotenv (2.8.1)
     dotenv-rails (2.8.1)
       dotenv (= 2.8.1)
@@ -126,7 +138,7 @@ GEM
     factory_bot_rails (6.2.0)
       factory_bot (~> 6.2.0)
       railties (>= 5.0.0)
-    faker (3.2.1)
+    faker (3.2.2)
       i18n (>= 1.8.11, < 2)
     ffi (1.16.3)
     globalid (1.2.1)
@@ -151,11 +163,12 @@ GEM
       net-pop
       net-smtp
     marcel (1.0.2)
+    matrix (0.4.2)
     mini_magick (4.12.0)
     mini_mime (1.1.5)
     minitest (5.20.0)
     mutex_m (0.1.2)
-    net-imap (0.4.3)
+    net-imap (0.4.4)
       date
       net-protocol
     net-pop (0.1.2)
@@ -179,9 +192,10 @@ GEM
       railties (>= 7.0.0)
     psych (5.1.1.1)
       stringio
+    public_suffix (5.0.3)
     puma (6.4.0)
       nio4r (~> 2.0)
-    racc (1.7.2)
+    racc (1.7.3)
     rack (3.0.8)
     rack-session (2.0.0)
       rack (>= 3.0.0)
@@ -205,6 +219,23 @@ GEM
     reline (0.3.9)
       io-console (~> 0.5)
     rexml (3.2.6)
+    rspec-core (3.12.2)
+      rspec-support (~> 3.12.0)
+    rspec-expectations (3.12.3)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.12.0)
+    rspec-mocks (3.12.6)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.12.0)
+    rspec-rails (6.0.3)
+      actionpack (>= 6.1)
+      activesupport (>= 6.1)
+      railties (>= 6.1)
+      rspec-core (~> 3.12)
+      rspec-expectations (~> 3.12)
+      rspec-mocks (~> 3.12)
+      rspec-support (~> 3.12)
+    rspec-support (3.12.1)
     rubocop (1.57.2)
       json (~> 2.3)
       language_server-protocol (>= 3.17.0)
@@ -218,6 +249,10 @@ GEM
       unicode-display_width (>= 2.4.0, < 3.0)
     rubocop-ast (1.30.0)
       parser (>= 3.2.1.0)
+    rubocop-capybara (2.19.0)
+      rubocop (~> 1.41)
+    rubocop-factory_bot (2.24.0)
+      rubocop (~> 1.33)
     rubocop-performance (1.19.1)
       rubocop (>= 1.7.0, < 2.0)
       rubocop-ast (>= 0.4.0)
@@ -225,14 +260,19 @@ GEM
       activesupport (>= 4.2.0)
       rack (>= 1.1)
       rubocop (>= 1.33.0, < 2.0)
+    rubocop-rspec (2.25.0)
+      rubocop (~> 1.40)
+      rubocop-capybara (~> 2.17)
+      rubocop-factory_bot (~> 2.22)
     ruby-progressbar (1.13.0)
     ruby-vips (2.2.0)
       ffi (~> 1.12)
     ruby2_keywords (0.0.5)
-    shoulda (4.0.0)
-      shoulda-context (~> 2.0)
-      shoulda-matchers (~> 4.0)
-    shoulda-context (2.0.0)
+    rubyzip (2.3.2)
+    selenium-webdriver (4.15.0)
+      rexml (~> 3.2, >= 3.2.5)
+      rubyzip (>= 1.2.2, < 3.0)
+      websocket (~> 1.0)
     shoulda-matchers (4.5.1)
       activesupport (>= 4.2.0)
     stringio (3.0.8)
@@ -244,15 +284,19 @@ GEM
       concurrent-ruby (~> 1.0)
     unicode-display_width (2.5.0)
     webrick (1.8.1)
+    websocket (1.2.10)
     websocket-driver (0.7.6)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.5)
+    xpath (3.2.0)
+      nokogiri (~> 1.8)
     zeitwerk (2.6.12)
 
 PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
+  capybara (~> 3.3)
   debug
   dotenv-rails
   factory_bot_rails (~> 6.2)
@@ -262,10 +306,13 @@ DEPENDENCIES
   propshaft
   puma (>= 5.0)
   rails!
+  rspec-rails (~> 6.0)
   rubocop
   rubocop-performance
   rubocop-rails
-  shoulda (~> 4.0)
+  rubocop-rspec
+  selenium-webdriver (~> 4.14)
+  shoulda-matchers (~> 4.5)
   tailwindcss-rails (~> 2.0)
   tzinfo-data
 

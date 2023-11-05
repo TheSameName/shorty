@@ -29,18 +29,26 @@ gem "tzinfo-data", platforms: %i[windows jruby]
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[mri windows]
+
+  gem "rspec-rails", "~> 6.0"
+  gem "shoulda-matchers", "~> 4.5"
+  gem "factory_bot_rails", "~> 6.2"
+  gem "faker", "~> 3.2"
+
+  gem "rubocop", require: false
+  gem "rubocop-rails", require: false
+  gem "rubocop-performance", require: false
+
+  gem "rubocop-rspec", require: false
+end
+
+group :test do
+  # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
+  gem "capybara", "~> 3.3"
+  gem "selenium-webdriver", "~> 4.14"
 end
 
 group :development do
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
-  gem "rubocop", require: false
-  gem "rubocop-rails", require: false
-  gem "rubocop-performance", require: false
-end
-
-group :test do
-  gem "shoulda", "~> 4.0"
-  gem "factory_bot_rails", "~> 6.2"
-  gem "faker", "~> 3.2"
 end

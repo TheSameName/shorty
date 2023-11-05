@@ -13,11 +13,3 @@ module ActiveSupport
     # Add more helper methods to be used by all tests here...
   end
 end
-
-# TODO: Move this to a separate file
-Shoulda::Matchers.configure do |config|
-  config.integrate do |with|
-    with.test_framework :minitest
-    with.library :rails
-  end
-end

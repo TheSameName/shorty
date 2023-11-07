@@ -10,6 +10,6 @@ class ApplicationController < ActionController::Base
 
     return unless counter.value > attempts
 
-    redirect_to root_path, alert: "You've exceeded the maximum number of attempts"
+    redirect_to sign_in_path, alert: "You've exceeded the maximum number of attempts"
   end
 end

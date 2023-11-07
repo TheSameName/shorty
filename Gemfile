@@ -17,6 +17,21 @@ gem "puma", ">= 5.0"
 # Manage secrets
 gem "dotenv-rails", require: "dotenv/rails-now"
 
+# Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
+gem "bcrypt", "~> 3.1.7"
+
+# Use Rack::Ratelimit to rate limit requests [https://github.com/jeremy/rack-ratelimit]
+gem "rack-ratelimit", group: :production
+
+# Use Redis adapter to run additional authentication features
+gem "redis", "~> 4.0"
+
+# Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
+gem "kredis"
+
+# Use Pwned to check if a password has been found in any of the huge data breaches [https://github.com/philnash/pwned]
+gem "pwned"
+
 # Tailwind-it!
 gem "tailwindcss-rails", "~> 2.0"
 

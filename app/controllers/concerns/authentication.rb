@@ -18,4 +18,8 @@ module Authentication
       redirect_to sign_in_url
     end
   end
+
+  def create_session_cookie(session)
+    cookies.signed.permanent[:session_token] = { value: session.id, httponly: true }
+  end
 end

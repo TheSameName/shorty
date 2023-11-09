@@ -17,6 +17,10 @@
     <%= stylesheet_link_tag "application" %>
 
     <%= javascript_importmap_tags %>
+
+    <% if content_for? :captcha %>
+      <%= yield :captcha %>
+    <% end %>
   </head>
 
   <body class="h-full">

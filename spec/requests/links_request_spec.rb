@@ -1,6 +1,6 @@
-require "rails_helper"
-
 RSpec.describe "Links" do
+  before { sign_in }
+
   describe "GET index" do
     it "renders a successful response" do
       get links_path

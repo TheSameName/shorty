@@ -31,4 +31,17 @@ Rails.application.config.to_prepare do
     config.active_storage.content_types_allowed_inline = IMAGE_MIMETYPES
     config.active_storage.content_types_to_serve_as_binary = UNSAFE_MIMETYPES
   end
+
+  # Allow only necessary routes to be accessed without authentication
+  ActiveStorage::BaseController.class_eval do
+    include Authentication
+  end
+
+  ActiveStorage::Blobs::RedirectController.class_eval do
+    skip_before_action :authenticate!
+  end
+
+  ActiveStorage::DiskController.class_eval do
+    skip_before_action :authenticate!, only: :show
+  end
 end

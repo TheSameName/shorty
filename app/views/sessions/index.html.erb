@@ -1,0 +1,38 @@
+<div class="min-h-screen">
+  <div class="container mx-auto py-8">
+    <p class="text-green-500"><%= notice %></p>
+
+    <h1 class="text-3xl font-bold mb-4">Devices & Sessions</h1>
+
+    <div id="sessions" class="bg-white rounded-lg shadow overflow-hidden">
+      <% @sessions.each do |session| %>
+        <div id="<%= dom_id session %>" class="flex justify-between items-center px-6 py-4 border-b border-gray-200">
+          <div class="flex-grow">
+            <p class="text-gray-700">
+              <strong>User Agent:</strong>
+              <%= session.user_agent %>
+            </p>
+
+            <p class="text-gray-700">
+              <strong>Ip Address:</strong>
+              <%= session.ip_address %>
+            </p>
+
+            <p class="text-gray-700">
+              <strong>Created at:</strong>
+              <%= session.created_at.strftime("%B %d, %Y at %I:%M %p") %>
+            </p>
+          </div>
+          <div class="flex-shrink-0">
+            <%= button_to "Log out", session, method: :delete, class: "bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded" %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+
+
+    <div>
+      <%= link_to "Back", home_path, class: "text-blue-500 hover:text-blue-700" %>
+    </div>
+  </div>
+</div>

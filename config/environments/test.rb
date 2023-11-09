@@ -31,6 +31,8 @@ Rails.application.configure do
   # Store uploaded files on the local file system in a temporary directory.
   config.active_storage.service = :test
 
+  config.action_mailer.default_url_options = { host: "localhost", port: 3000 }
+
   # Disable active storage direct upload routes
   # config.active_storage.draw_routes = false
 

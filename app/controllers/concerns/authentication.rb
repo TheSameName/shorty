@@ -15,6 +15,8 @@ module Authentication
     if (session = Session.find_by(id: cookies.signed[:session_token]))
       Current.session = session
     else
+      return head :unauthorized unless is_a?(ApplicationController)
+
       redirect_to sign_in_url
     end
   end

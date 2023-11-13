@@ -18,7 +18,7 @@ class RedirectsController < ApplicationController
       link: @link,
       remote_ip: request.remote_ip,
       user_agent: request.user_agent,
-      referrer: request.referer,
+      referer: request.referer,
       utm_source: link_params[:utm_source]
     )
   end

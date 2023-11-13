@@ -1,8 +1,6 @@
 module Events
   class Click < ::Event
-    # @mimic belongs_to :link
-    alias_attribute :link, :owner
-    alias_attribute :link_id, :owner_id
+    belongs_to :link, class_name: "::Link", foreign_key: :owner_id, inverse_of: :clicks
 
     json_attribute :remote_ip # TODO: Anonymize-it!
     json_attribute :user_agent

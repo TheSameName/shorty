@@ -17,6 +17,8 @@ gem "puma", ">= 5.0"
 # Manage secrets
 gem "dotenv-rails", require: "dotenv/rails-now"
 
+gem "importmap-rails", "~> 1.2"
+
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
 gem "bcrypt", "~> 3.1.7"
 

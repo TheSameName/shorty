@@ -9,12 +9,12 @@ class Event < ApplicationRecord
   # json_attribute :name
   # Event.new(name: 'test').name
   # => 'test'
-  def self.json_attribute(*attributes)
-    attributes.each do |attribute|
-      attribute_string = attribute.to_s
+  def self.json_attribute(*json_attributes)
+    json_attributes.each do |json_attribute|
+      attribute_string = json_attribute.to_s
 
-      define_method(attribute) { data[attribute_string] }
-      define_method("#{attribute}=") { |val| data[attribute_string] = val }
+      define_method(json_attribute) { data[attribute_string] }
+      define_method("#{json_attribute}=") { |val| data[attribute_string] = val }
     end
   end
 

@@ -38,6 +38,12 @@ gem "tailwindcss-rails", "~> 2.0"
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 gem "image_processing", "~> 1.12"
 
+# Provides a simple and elegant way to create beautiful JavaScript charts with minimal code.
+gem "chartkick", "~> 5.0"
+
+# Provides a simple and efficient way to perform date-based aggregations on your data.
+gem "groupdate", "~> 6.4"
+
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem "tzinfo-data", platforms: %i[windows jruby]
 

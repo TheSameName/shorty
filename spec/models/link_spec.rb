@@ -4,7 +4,10 @@ RSpec.describe Link do
   describe "relations" do
     it { is_expected.to have_many(:link_configurations).dependent(:destroy) }
     it { is_expected.to accept_nested_attributes_for(:link_configurations).allow_destroy(true) }
+
+    it { is_expected.to have_many(:clicks).class_name("Events::Click").dependent(:destroy).inverse_of(:link).counter_cache(true) }
   end
+
 
   describe "validations" do
     it { is_expected.to validate_presence_of(:url) }

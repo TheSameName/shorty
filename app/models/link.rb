@@ -7,7 +7,9 @@ class Link < ApplicationRecord
 
   has_many :clicks, as: :owner, # TODO: add counter_cache
     class_name: "Events::Click",
-    dependent: :destroy
+    dependent: :destroy,
+    inverse_of: :link,
+    counter_cache: true
 
   accepts_nested_attributes_for :link_configurations, reject_if: :all_blank, allow_destroy: true
 

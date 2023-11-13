@@ -3,7 +3,15 @@ RSpec.describe Events::Click do
   it_behaves_like Event, :events_click
 
   describe "associations" do
-    it { is_expected.to belong_to(:link).class_name("Link").inverse_of(:clicks) }
+    subject(:click) { build(:events_click) }
+
+    it do
+      expect(click)
+        .to belong_to(:link)
+        .class_name("Link")
+        .inverse_of(:clicks)
+        .counter_cache(true)
+    end
   end
 
   describe "validations"

@@ -26,6 +26,8 @@ Rails.application.routes.draw do
     get "/home" => "home#index"
   end
 
+  get "/statistics" => "statistics#index"
+
   root "links#new"
 
   get "/:slug" => "redirects#show", as: :short

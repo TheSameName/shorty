@@ -1,0 +1,11 @@
+<section class="bg-white rounded-lg shadow-lg p-6">
+  <h2 class="text-2xl font-bold mb-4">Clicks per day</h2>
+
+  <%= column_chart Events::Click.group_by_day_of_week(:created_at, format: "%a").count %>
+</section>
+
+<section class="bg-white rounded-lg shadow-lg p-6 mt-6">
+  <h2 class="text-2xl font-bold mb-4">Clicks per link</h2>
+
+  <%= pie_chart Events::Click.group(:link).count %>
+</section>

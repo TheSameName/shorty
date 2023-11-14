@@ -1,4 +1,6 @@
 class RedirectsController < ApplicationController
+  layout "blank"
+
   skip_before_action :authenticate!
 
   before_action :find_link!

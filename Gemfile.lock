@@ -145,8 +145,14 @@ GEM
     ffi (1.16.3)
     globalid (1.2.1)
       activesupport (>= 6.1)
+    google-protobuf (3.25.0-x86_64-linux)
+    googleapis-common-protos-types (1.10.0)
+      google-protobuf (~> 3.18)
     groupdate (6.4.0)
       activesupport (>= 6.1)
+    grpc (1.59.2-x86_64-linux)
+      google-protobuf (~> 3.24)
+      googleapis-common-protos-types (~> 1.0)
     i18n (1.14.1)
       concurrent-ruby (~> 1.0)
     image_processing (1.12.2)
@@ -193,6 +199,11 @@ GEM
       timeout
     net-smtp (0.4.0)
       net-protocol
+    newrelic-infinite_tracing (9.6.0)
+      grpc (~> 1.34)
+      newrelic_rpm (= 9.6.0)
+    newrelic_rpm (9.6.0)
+      base64
     nio4r (2.5.9)
     nokogiri (1.15.4-x86_64-linux)
       racc (~> 1.4)
@@ -327,6 +338,8 @@ DEPENDENCIES
   importmap-rails (~> 1.2)
   kredis
   letter_opener (~> 1.8)
+  newrelic-infinite_tracing (~> 9.6)
+  newrelic_rpm (~> 9.6)
   pg (~> 1.1)
   propshaft
   puma (>= 5.0)

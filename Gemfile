@@ -46,6 +46,10 @@ gem "chartkick", "~> 5.0"
 # Provides a simple and efficient way to perform date-based aggregations on your data.
 gem "groupdate", "~> 6.4"
 
+gem "newrelic_rpm", "~> 9.6"
+
+gem "newrelic-infinite_tracing", "~> 9.6"
+
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem "tzinfo-data", platforms: %i[windows jruby]
 

@@ -1,0 +1,8 @@
+
+<% if Rails.env.production? %>
+  <% content_for :captcha do %>
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+  <% end%>
+
+  <div class="cf-turnstile" data-sitekey="<%= ENV.fetch("TURNSTILE_KEY") %>"></div>
+<% end %>

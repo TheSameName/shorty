@@ -8,25 +8,24 @@ Rails.application.routes.draw do
   get  "sign_in", to: "sessions#new"
   post "sign_in", to: "sessions#create"
 
-  if Rails.env.local?
-    get  "sign_up", to: "registrations#new"
-    post "sign_up", to: "registrations#create"
+  get  "sign_up", to: "registrations#new"
+  post "sign_up", to: "registrations#create"
 
-    resources :sessions, only: %i[index show destroy]
-    resource  :password, only: %i[edit update]
+  resources :sessions, only: %i[index show destroy]
+  resource  :password, only: %i[edit update]
 
-    namespace :identity do
-      resource :email,              only: %i[edit update]
-      resource :email_verification, only: %i[show create]
-      resource :password_reset,     only: %i[new edit create update]
-    end
-
-    resources :links
-
-    get "/home" => "home#index"
+  namespace :identity do
+    resource :email,              only: %i[edit update]
+    resource :email_verification, only: %i[show create]
+    resource :password_reset,     only: %i[new edit create update]
   end
 
+
+  resources :links
+
   get "/statistics" => "statistics#index"
+
+  get "/home" => "home#index"
 
   root "links#new"
 

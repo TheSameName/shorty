@@ -53,7 +53,7 @@ RSpec.describe "Link with configuration" do
   end
 
   it "renders refresh meta tag" do
-    expect(find('//head/meta[http-equiv="refresh"]', visible: false)[:content]).to eq("1; url=#{link.url}")
+    expect(find('//head/meta[http-equiv="refresh"]', visible: false)[:content]).to eq("0; url=#{link.url}")
   end
 
   xit "should render image meta tags" do

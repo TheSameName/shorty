@@ -6,6 +6,9 @@ class RegistrationsController < ApplicationController
   end
 
   def create
+    # Temporary disable sign up
+    return redirect_to sign_in_path, notice: "Sign up is disabled" if Rails.env.production?
+
     @account = Account.new(user_params)
 
     if @account.save

@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <% if content_for? :head %>
+      <%= yield :head %>
+    <% else %>
+      <%= render partial: "shared/metatags" %>
+    <% end %>
+  </head>
+  <body>
+      <%= yield %>
+  </body>
+</html>

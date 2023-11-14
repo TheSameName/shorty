@@ -18,6 +18,28 @@ class Event < ApplicationRecord
     end
   end
 
-  # TODO: Query json attributes
-  # Event.where(name: 'test')
+  def self.where_data(**data)
+    scope = all
+
+    data.each do |name, value|
+      arel_data_column =
+        Arel::Nodes::InfixOperation.new(
+          "->>",
+          arel_table[:data],
+          Arel::Nodes.build_quoted(name)
+        )
+
+      condition = case
+                  when value.is_a?(Array) then arel_data_column.in(value.map(&:to_s))
+                  when value.nil?         then arel_data_column.eq(nil)
+                  else
+                    arel_data_column.eq(value.to_s)
+                  end
+
+      scope = scope.where condition
+    end
+
+    scope
+  end
+
 end

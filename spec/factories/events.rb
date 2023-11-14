@@ -1,5 +1,6 @@
 FactoryBot.define do
   factory :event do
-    # data { {} }
+    type { "Event" }
+    data { {} }
   end
 end

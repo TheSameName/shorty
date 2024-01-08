@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-ruby "3.2.2"
+ruby "3.3"
 
 # Use specific branch of Rails
 gem "rails", github: "rails/rails", branch: "7-1-stable"
@@ -67,6 +67,8 @@ group :development, :test do
   gem "rubocop-performance", require: false
 
   gem "rubocop-rspec", require: false
+
+  gem "brakeman", require: false
 end
 
 group :test do
